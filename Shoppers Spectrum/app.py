@@ -25,7 +25,7 @@ if page == "🛒 Product Recommendations":
      st.write("Find matching inventory options based on historical customer checkouts.")
      @st.cache_resource
      def load_recommendation_data():
-         with open('item_similarity.pkl','rb') as f:
+         with open('Shoppers Spectrum/Models/item_similarity.pkl','rb') as f:
            return pickle.load(f)
 
 
@@ -106,7 +106,7 @@ elif page == "📊 Customer Segmentation":
 
     @st.cache_resource
     def load_segmentation_module():
-        with open('scaler.pkl','rb') as sf , open('kmeans_model.pkl', 'rb') as mf:
+        with open('Shoppers Spectrum/Models/scaler.pkl','rb') as sf , open('Shoppers Spectrum/Models/kmeans_model.pkl', 'rb') as mf:
             return pickle.load(sf), pickle.load(mf)
     try:
        scaler, kmeans= load_segmentation_module()
